@@ -1,11 +1,11 @@
-import { galleryItems } from "./gallery-items.js";
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galleryPlace = document.querySelector(`.gallery`);
 
 console.log(galleryItems);
 
-const changeGalleryOfImage = galleryItems.map((galleryItem) => {
+const changeGalleryOfImage = galleryItems.map(galleryItem => {
   const changeItemEl = document.createElement(`a`);
   changeItemEl.href = galleryItem.original;
   changeItemEl.classList.add(`gallery__link`);
@@ -22,3 +22,11 @@ const changeGalleryOfImage = galleryItems.map((galleryItem) => {
 });
 
 galleryPlace.append(...changeGalleryOfImage);
+
+galleryPlace.addEventListener(`click`, callModalWindow);
+
+function callModalWindow(event) {
+  event.preventDefault();
+
+  console.log();
+}
