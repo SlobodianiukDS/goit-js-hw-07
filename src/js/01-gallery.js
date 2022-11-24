@@ -41,6 +41,6 @@ function callModalWindow(event) {
 document.addEventListener('keydown', event => {
   const faidModal = document.querySelector(`div.basicLightbox`);
   if (event.key === 'Escape' && faidModal !== null) {
-    const instance = basicLightbox.close();
+    basicLightbox.close();
   }
 });
