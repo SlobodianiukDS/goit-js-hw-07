@@ -24,6 +24,8 @@ const changeGalleryOfImage = galleryItems.map(galleryItem => {
 });
 galleryPlace.append(...changeGalleryOfImage);
 
+// ----------------------------------------------------------
+
 galleryPlace.addEventListener(`click`, callModalWindow);
 
 function callModalWindow(event) {
@@ -32,15 +34,15 @@ function callModalWindow(event) {
     return;
   }
   // console.log(event.target.dataset.source);
-  const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" alt="${event.target.alt}" width="800">
-`);
+  const instance = basicLightbox.create(
+    `<img src="${event.target.dataset.source}" alt="${event.target.alt}" width="800">`
+  );
   instance.show();
-}
 
-document.addEventListener('keydown', event => {
-  const faidModal = document.querySelector(`div.basicLightbox`);
-  if (event.key === 'Escape' && faidModal !== null) {
-    basicLightbox.close();
-  }
-});
+  document.addEventListener('keydown', event => {
+    const faidModal = document.querySelector(`div.basicLightbox`);
+    if (event.key === 'Escape' && faidModal !== null) {
+      instance.close();
+    }
+  });
+}
