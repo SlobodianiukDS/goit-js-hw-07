@@ -26,18 +26,13 @@ const changeGalleryOfImage = galleryItems.map(galleryItem => {
 galleryPlace.append(...changeGalleryOfImage);
 
 // -----------------------------------------------
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: `alt`,
+  captionDelay: 250,
+});
 
 galleryPlace.addEventListener(`click`, callModalWindow);
 
 function callModalWindow(event) {
   event.preventDefault();
-  if (event.target.nodeName != 'IMG') {
-    return;
-  }
-  // console.log(event.target.dataset.source);
-
-  var lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: `alt`,
-    captionDelay: 250,
-  });
 }
